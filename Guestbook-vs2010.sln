@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guestbook", "Guestbook\Guestbook.csproj", "{A3B0F7DA-544C-4E7F-967C-9F2D2EAD78D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guestbook.Spec", "Guestbook.Spec\Guestbook.Spec.csproj", "{B3DC5763-BF6F-4547-807E-B5470F342C28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guestbook.Domain", "Guestbook.Domain\Guestbook.Domain.csproj", "{D7CDFBBF-7F13-44E1-8C56-D8884AFEDB5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3B0F7DA-544C-4E7F-967C-9F2D2EAD78D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B0F7DA-544C-4E7F-967C-9F2D2EAD78D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B0F7DA-544C-4E7F-967C-9F2D2EAD78D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B0F7DA-544C-4E7F-967C-9F2D2EAD78D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3DC5763-BF6F-4547-807E-B5470F342C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3DC5763-BF6F-4547-807E-B5470F342C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3DC5763-BF6F-4547-807E-B5470F342C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3DC5763-BF6F-4547-807E-B5470F342C28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7CDFBBF-7F13-44E1-8C56-D8884AFEDB5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7CDFBBF-7F13-44E1-8C56-D8884AFEDB5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7CDFBBF-7F13-44E1-8C56-D8884AFEDB5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7CDFBBF-7F13-44E1-8C56-D8884AFEDB5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
