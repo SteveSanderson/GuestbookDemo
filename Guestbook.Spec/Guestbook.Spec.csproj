@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Deleporter">
+      <HintPath>External Assemblies\Deleporter.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.SHDocVw">
       <HintPath>External Assemblies\Interop.SHDocVw.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -73,6 +76,9 @@
     </Compile>
     <Compile Include="PageWrappers\GuestbookEntriesList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\Infrastructure\SerializableTable.cs" />
+    <Compile Include="Steps\Infrastructure\TidyUp.cs" />
+    <Compile Include="Steps\MockData.cs" />
     <Compile Include="Steps\ViewingGuestbook.cs" />
     <Compile Include="Steps\Infrastructure\WebBrowser.cs" />
     <Compile Include="Steps\Navigation.cs" />
@@ -87,9 +93,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Posting.feature.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Guestbook.Domain\Guestbook.Domain.csproj">

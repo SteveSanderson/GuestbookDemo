@@ -14,7 +14,7 @@ namespace Guestbook.Controllers
 
         public ActionResult Index()
         {
-            return View(_repository.Entries);
+            return View(_repository.Entries.OrderByDescending(x => x.PostedDate));
         }
 
         public ActionResult Post()

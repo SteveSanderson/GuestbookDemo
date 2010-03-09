@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Guestbook.Spec.PageWrappers;
-using Guestbook.Spec.Steps.Infrastructure;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -30,17 +29,23 @@ namespace Guestbook.Spec.Steps
             }
         }
 
-        [Then(@"the guestbook entries includes the following")]
-        public void ThenTheGuestbookEntriesIncludesTheFollowing(Table table)
+        [Then(@"the guestbook entries includes the following(, in this order)?")]
+        public void ThenTheGuestbookEntriesIncludesTheFollowing(string inThisOrder, Table table)
         {
-            var entries = GuestbookEntriesList.DisplayedEntries.ToList();
+            bool requiresExactOrder = !string.IsNullOrEmpty(inThisOrder);
+            List<GuestbookEntriesList.Entry> entries = GuestbookEntriesList.DisplayedEntries.ToList();
+
+            Func<GuestbookEntriesList.Entry, TableRow, bool> equalityComparer = (entry, row) => {
+                return (row["Name"] == entry.Author
+                        && row["Comment"] == entry.Comment
+                        && IsValidPostedDate(entry, row["Posted date"]));
+            };
+
+            int lastMatchIndex = -1;
             foreach (var row in table.Rows) {
-                var matchingEntries = from entry in entries
-                                      where entry.Author == row["Name"]
-                                            && entry.Comment == row["Comment"]
-                                            && IsValidPostedDate(entry, row["Posted date"])
-                                      select entry;
-                CollectionAssert.IsNotEmpty(matchingEntries);
+                lastMatchIndex = entries.FindIndex(requiresExactOrder ? lastMatchIndex + 1 : 0, entry => equalityComparer(entry, row));
+                if (lastMatchIndex < 0)
+                    Assert.Fail("No match for " + row);
             }
         }
 

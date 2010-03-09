@@ -1,0 +1,8 @@
+*.suo
+*.csproj.user
+bin
+obj
+*.pdb
+_ReSharper*
+*.ReSharper.user
+desktop.ini

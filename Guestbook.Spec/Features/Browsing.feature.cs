@@ -85,5 +85,56 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             testRunner.CollectScenarioErrors();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Most recent entries are displayed first")]
+        public virtual void MostRecentEntriesAreDisplayedFirst()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Most recent entries are displayed first", ((string[])(null)));
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Comment",
+                        "Posted date"});
+            table1.AddRow(new string[] {
+                        "Mr. A",
+                        "I like A",
+                        "2008-10-01 09:20"});
+            table1.AddRow(new string[] {
+                        "Mrs. B",
+                        "I like B",
+                        "2010-03-05 02:15"});
+            table1.AddRow(new string[] {
+                        "Dr. C",
+                        "I like C",
+                        "2010-02-20 12:21"});
+#line 18
+ testRunner.Given("we have the following existing entries", ((string)(null)), table1);
+#line 23
+      testRunner.And("I am on the guestbook page");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Comment",
+                        "Posted date"});
+            table2.AddRow(new string[] {
+                        "Mrs. B",
+                        "I like B",
+                        "2010-03-05 02:15"});
+            table2.AddRow(new string[] {
+                        "Dr. C",
+                        "I like C",
+                        "2010-02-20 12:21"});
+            table2.AddRow(new string[] {
+                        "Mr. A",
+                        "I like A",
+                        "2008-10-01 09:20"});
+#line 24
+    testRunner.Then("the guestbook entries includes the following, in this order", ((string)(null)), table2);
+#line hidden
+            testRunner.CollectScenarioErrors();
+        }
     }
 }
